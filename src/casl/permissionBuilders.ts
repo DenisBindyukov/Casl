@@ -13,6 +13,7 @@ export enum PermissionGroups {
     anonymous = 'anonymous'
 }
 
+
 export default (user: UserType) => defineAbility((can, cannot) => {
     switch (user.role) {
         case PermissionGroups.superAdmin:

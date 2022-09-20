@@ -65,6 +65,7 @@ function App() {
             userName: user.role,
             authorId: user.id
         }
+
         setTodo([newTodos, ...todos]);
         setText('');
     }
@@ -77,7 +78,6 @@ function App() {
                                             updateTitle={updateTitle}
                                             changeChecked={changeChecked}/>)
 
-    console.log('todos', todos)
 
     return (
         <div className="App">
@@ -124,6 +124,7 @@ type TodosType = {
 }
 const Todo = (props: TodosType) => {
     const [updateToggle, setUpdateToggle] = useState(false);
+
 
     const setUpdateToggleHandler = () => {
         if (!props.userAbility.can('update', subject('Todo', props.todo))) return
